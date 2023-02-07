@@ -22,6 +22,10 @@ if [ -z ${OTEL_PROPAGATORS} ]; then
     export OTEL_PROPAGATORS="tracecontext,baggage,xray";
 fi
 
+if [ -z ${OTEL_METRICS_EXPORTER} ]; then
+    export OTEL_METRICS_EXPORTER="otlp";
+fi
+
 # - Call the upstream configure OTel script
 
 source /opt/otel-instrument-upstream-lambda
